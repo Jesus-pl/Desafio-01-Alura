@@ -1,0 +1,313 @@
+:root {
+    /* Colores */
+    --color-primario: #295F98;
+    --color-secundario: #D8DFE8;
+    --color-terciario: #FFFFFF;
+    --color-texto: #495057;
+    --color-fondo: #f4f4f4;
+    --color-alerta: #343A40;
+    --color-cuadro: #E8F4F8; /* Color de fondo del cuadro de texto */
+    --color-borde-cuadro: #A2D9E1; /* Color del borde del cuadro de texto */
+    --color-texto-cuadro: #333333; /* Color del texto dentro del cuadro de texto */
+}
+
+/* Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-principal);
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-size: 1rem;
+}
+
+/* Header */
+.header {
+    padding: 1% 0;
+}
+
+/* Main Section */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2%;
+    padding: 0%;
+}
+
+/* Sección 1 */
+.seccion1 {
+    width: 50%;
+    max-width: 1200px; /* Aumenta el ancho máximo para pantallas grandes */
+}
+
+/* Caja de Texto */
+.texto {
+    background-color: var(--color-cuadro); /* Nuevo color de fondo */
+    cursor: pointer;
+    color: var(--color-texto-cuadro); /* Color del texto */
+    font-size: 1rem;
+    height: 300px;
+    border: 2px solid var(--color-borde-cuadro); /* Nuevo color de borde */
+    border-radius: 8px; /* Borde redondeado */
+    resize: none;
+    padding: 1rem;
+    width: 100%; /* Asegura que el cuadro ocupe todo el ancho disponible */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para destacarlo */
+}
+
+.texto:focus {
+    outline: none;
+}
+
+/* Alertas */
+.alerta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.alerta p {
+    font-size: 1rem;
+    color: var(--color-texto);
+}
+
+.iconoalerta {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.botonEncriptar,
+.botonDesencriptar {
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 150px;
+    text-align: center;
+}
+
+.botonEncriptar {
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+}
+
+.botonDesencriptar {
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+}
+
+.botonEncriptar:hover,
+.botonDesencriptar:hover {
+    color: var(--color-primario);
+    background-color: var(--color-terciario);
+    border-color: var(--color-primario);
+}
+
+/* Sección 2 */
+.seccion2 {
+    background-color: var(--color-terciario);
+    height: auto;
+    width: 30%;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.campoMuneco {
+    text-align: center;
+    color: var(--color-alerta);
+    font-size: 0.625rem;
+}
+
+.imgMuneco {
+    width: 60%;
+}
+
+.cajatexto2 h2 {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    color: var(--color-alerta);
+}
+
+.cajatexto2 p {
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.cajaDeResultado {
+    text-align: center;
+}
+
+.resultadoDesencriptado p {
+    color: var(--color-texto);
+    font-size: 1rem;
+    height: 400px;
+    border: none;
+    resize: none;
+    padding: 1rem;
+}
+
+.botonCopiar {
+    width: 70%;
+    background-color: var(--color-terciario);
+    color: var(--color-primario);
+    cursor: pointer;
+    border: 1px solid var(--color-primario);
+    padding: 0.5rem;
+    font-size: 0.75rem;
+}
+
+button {
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+}
+
+/* Para Tablet */
+@media (max-width: 1200px) {
+    main {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .header {
+        padding: 2% 0;
+    }
+
+    .seccion1 {
+        width: 90%;
+    }
+
+    .texto {
+        width: 100%;
+    }
+
+    .botones {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .seccion2 {
+        width: 90%;
+        margin-top: 1rem;
+    }
+
+    .imgMuneco {
+        display: none;
+    }
+
+    .cajatexto2 h2 {
+        margin: 0;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .cajatexto2 p {
+        padding-bottom: 0.5rem;
+    }
+
+    .resultadoDesencriptado {
+        padding: 1rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .botonCopiar {
+        margin-bottom: 1rem;
+        width: 80%;
+    }
+}
+
+/* Para Móvil */
+@media (max-width: 520px) {
+    main {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .header {
+        padding: 3% 0;
+    }
+
+    .seccion1 {
+        width: 100%;
+    }
+
+    .texto {
+        width: 100%;
+        font-size: 0.75rem;
+    }
+
+    .botones {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .seccion2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .cajatexto2 h2 {
+        font-size: 0.5rem;
+    }
+
+    .cajatexto2 p {
+        font-size: 0.5rem;
+    }
+
+    .resultadoDesencriptado {
+        padding: 1rem;
+        width: 100%;
+        font-size: 0.5rem;
+        height: auto;
+    }
+
+    .botonCopiar {
+        margin-bottom: 1rem;
+        width: 80%;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+    font-family: var(--fuente-secundaria);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    position: fixed; /* Fija el footer al fondo */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
